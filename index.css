@@ -106,7 +106,7 @@ nav .navigation ul li a:hover{
     grid-template-columns: auto;
     align-content:center;
     justify-items: center;
-    padding-top: 100px; /*modified here  */
+    padding-top: 150px; /*modified here  */
 }
 #home h2{
     color: #fff;
@@ -274,7 +274,7 @@ nav .navigation ul li a:hover{
     grid-gap: 10px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     padding: 25px;
 }
 #registration .form form input  {
@@ -571,6 +571,5 @@ nav .navigation ul li a:hover{
         justify-content: center;
         align-items: center;
     }
-
-  
+    
 }
