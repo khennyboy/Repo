@@ -26,9 +26,9 @@ h6{
 }
 /* navigation style */
 nav{
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 1vw 8vw;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 20px;
     padding-left: 0;
     align-items: center;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
@@ -41,23 +41,18 @@ nav{
 .logo_container{
     cursor: pointer;
     position: relative;
+    width: fit-content;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
 }
 
 nav img{
-    width: 150px;
+    width: 70px;
 }
 h3#hub1 {
-  position: absolute;
-  left: 95px;
-  top: 25px;
-  text-transform: uppercase;
-  text-shadow:3px 2px #FDC93B;
-  color: rgb(21, 21, 100)
-}
-h3#hub2 {
-  position: absolute;
-  left:100px;
-  top: 43px;
   text-transform: uppercase;
   text-shadow:3px 2px #FDC93B;
   color: rgb(21, 21, 100)
@@ -66,7 +61,10 @@ nav .navigation{
     display: flex;
 }
 nav .navigation i{
-    font-size: 2.3rem;
+    font-size: 27px;
+    padding: 5px 10px;
+    border: 3px solid gray;
+    border-radius: 8px;
 }
 nav .navigation #menu_btn{
     display: none;
@@ -106,7 +104,7 @@ nav .navigation ul li a:hover{
     grid-template-columns: auto;
     align-content:center;
     justify-items: center;
-    padding-top: 150px; /*modified here  */
+    padding-top: 100px; /*modified here  */
 }
 #home h2{
     color: #fff;
@@ -521,9 +519,6 @@ nav .navigation ul li a:hover{
     nav .navigation ul li a{
         color: #fff;
     }
-    #home{
-        padding-top: 0px;
-    }
     #home p{
         width: 90%;
     }
@@ -560,6 +555,9 @@ nav .navigation ul li a:hover{
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+    #home{
+        padding-top: 0px;
     }
 
     #registration div.reminder div.time {
