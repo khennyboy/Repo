@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>The use of grid design to make a website layout</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .logo-nav-div {
+        grid-area: logo-nav;
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+      .item-1 {
+        background-color: lightgrey;
+        padding: 20px;
+      }
+      .logo-div {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+      .nav-div {
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      .boxes {
+        grid-area: boxes;
+        display: grid;
+        grid-template-columns: repeat(
+          4,
+          1fr
+        ); /* when you use auto any modifications on one of the box , the other boxes will adjust to have same width again */
+        grid-gap: 15px;
+      }
+
+      .item-2 {
+        background-color: lightgrey;
+        height: 80px;
+      }
+      .column2 {
+        margin-right: 15px;
+      }
+      .column3 {
+        margin-left: 15px;
+      }
+      .containers {
+        grid-area: containers;
+        display: grid;
+        grid-template-columns:
+          repeat(2, 1fr)
+          repeat(1, 1fr); /* or use grid-template-columns: auto auto auto; */
+        grid-gap: 10px;
+      }
+      .item-3 {
+        background-color: lightgrey;
+        padding: 40px;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      .footer {
+        grid-area: footer;
+        background-color: lightgrey;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "logo-nav"
+          "boxes" "containers" "footer";
+        background-color: orange;
+        padding: 10px;
+        grid-gap: 10px;
+        width: 80%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="logo-nav-div">
+        <div class="item-1 logo-div">Logo</div>
+        <div class="item-1 nav-div">Navigation</div>
+      </div>
+      <div class="boxes">
+        <div class="item-2"></div>
+        <div class="item-2 column2"></div>
+        <div class="item-2 column3"></div>
+        <div class="item-2"></div>
+        <div class="item-2"></div>
+        <div class="item-2 column2"></div>
+        <div class="item-2 column3"></div>
+        <div class="item-2"></div>
+        <div class="item-2"></div>
+        <div class="item-2 column2"></div>
+        <div class="item-2 column3"></div>
+        <div class="item-2"></div>
+        <div class="item-2"></div>
+        <div class="item-2 column2"></div>
+        <div class="item-2 column3"></div>
+        <div class="item-2"></div>
+      </div>
+      <div class="containers">
+        <div class="item-3">Box 1</div>
+        <div class="item-3">Box 2</div>
+        <div class="item-3">Box 3</div>
+      </div>
+      <div class="footer">
+        <div>Footer</div>
+      </div>
+    </div>
+  </body>
+</html>

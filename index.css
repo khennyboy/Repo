@@ -1,0 +1,575 @@
+@import url("https:fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+}
+
+/* global tags */
+h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+
+span{
+    font-size: .9rem;
+    color: #757373;
+}
+h6{
+    font-size: 1.1rem;
+    color: rgb(24, 24, 49);
+}
+/* navigation style */
+nav{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 1vw 8vw;
+    padding-left: 0;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    justify-content: space-between;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    z-index: 10000000;
+}
+.logo_container{
+    cursor: pointer;
+    position: relative;
+}
+
+nav img{
+    width: 150px;
+}
+h3#hub1 {
+  position: absolute;
+  left: 95px;
+  top: 25px;
+  text-transform: uppercase;
+  text-shadow:3px 2px #FDC93B;
+  color: rgb(21, 21, 100)
+}
+h3#hub2 {
+  position: absolute;
+  left:100px;
+  top: 43px;
+  text-transform: uppercase;
+  text-shadow:3px 2px #FDC93B;
+  color: rgb(21, 21, 100)
+}
+nav .navigation{
+    display: flex;
+}
+nav .navigation i{
+    font-size: 2.3rem;
+}
+nav .navigation #menu_btn{
+    display: none;
+    cursor: pointer;
+}
+nav .navigation #menu_close{
+    display: none;
+    cursor: pointer;
+}
+nav .navigation ul{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    column-gap: 30px;
+}
+nav .navigation ul li{
+    list-style-type: none;
+}
+nav .navigation ul li a{
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease; /*We make use of transition*/
+}
+nav .navigation ul li a:hover{
+    color: #FDC93B;
+}
+/* Section style */
+#home{
+    background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url("background5.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto;
+    align-content:center;
+    justify-items: center;
+    padding-top: 100px; /*modified here  */
+}
+#home h2{
+    color: #fff;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+#home p{
+    width: 50%;
+    color: #fff;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+#home .btn{
+    margin-top: 30px;
+}
+#home a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-left: 20px;/*modified here   */
+}
+#home div.btn a.blue{
+    color: #fff;
+    background: rgb(21, 21, 100);
+    transition: 0.3s ease;
+}
+#home div.btn a.blue:hover{
+    color: rgb(21, 21, 100);
+    background: #fff;
+}
+#home div.btn a.yellow{
+    color: #fff;
+    background: #FDC93B;
+    transition: 0.3s ease;
+}
+#home div.btn a.yellow:hover{
+    color: #FDC93B;
+    background: #fff;
+}
+ /* features */
+ #features{
+    padding: 8vw 8vw 0 8vw; /*modified here */
+    text-align: center;
+ }
+ #features .fea-box{
+    background: #f9f9ff;
+    text-align: start;
+ }
+ #features .fea-box i{
+    font-size: 2.3rem;
+    color: rgb(44, 44, 80);
+ }
+ #features .fea-box h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(46  , 46, 59);
+    padding: 13px 0 7px 0;
+ }
+ #features .fea-box p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(70 , 70, 87);
+ }
+ #features .fea-base{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) ;
+    grid-gap: 1rem;
+    margin-top: 50px;
+ }
+ /* Courses */
+ #course{
+    padding: 8vw 8vw 0 8vw;
+    text-align: center;
+ }
+ #course .course-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+ }
+ #course .course-box .courses{
+    background: #f9f9ff;
+    padding-bottom: 20px; 
+    height: 100%;
+    position: relative;
+ }
+ #course .course-box .courses img{
+    width: 80%;
+    height: 250px;
+ }
+#course .courses .details{
+    padding: 15px 15px 0 15px;
+
+}
+#course .course-box .courses .details i{
+    color: #FDC93B;
+    font-size: 0.9rem;
+}
+#course .course-box .courses .cost{
+    background-color: rgb(74, 74, 136);
+    color: #fff;
+    line-height: 70px;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    bottom: 60px; /*modified*/
+}
+/* registration styling */
+#registration{
+    padding: 6vw 8vw 6vw 8vw ;
+    background-image:linear-gradient(rgba(99, 112, 168, 0.5), rgba(81, 91, 233, 0.5)), url("JavaScript.jpeg");
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: auto auto; /* modified here */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+#registration div.reminder{
+    color: #fff;
+}
+#registration div.reminder h1{
+    color: #fff !important;
+}
+#registration div.reminder div.time{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+#registration div.reminder div.time div.date{
+    padding: 13px 33px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);   /* interesting */
+    box-shadow: 0 8px 32px  rgba(31, 18, 135, 0.37); /* interesting */
+    border-radius: 5px;
+    margin: 0 5px 10px 5px;
+    border: 1px solid rgba(255 , 255, 255, 0.18);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+#registration .form form{
+    background: #fff;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 300px; /* modified here */
+    grid-template-rows: 4px; /* modified here */
+    grid-gap: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    align-items: center;
+    justify-items: center;
+    padding: 25px;
+}
+#registration .form form input  {
+    margin: 15px 0;
+    padding: 15px 10px;
+    border: 1px solid rgb(84, 40, 241);
+    outline: none;
+    width: 100%;
+}
+
+#registration .form form input::placeholder{
+    color: #413c3c;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+#registration .form form input[type=text]:focus{
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+#registration .form form input[type=text]:valid{
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+#registration .form form input[type=number]:focus{
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#registration .form form input[type=number]:valid{
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+#registration .form form input[type=email]:focus{
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#registration .form form input[type=email]:valid{
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#registration .form form .btn{
+    margin: 10px 0 10px 0;
+}
+
+#registration .form form .btn a.yellow{
+        color: #fff;
+        background: #FDC93B;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 13px 35px;
+        transition: 0.3s ease;
+}
+#registration .form form .btn a.yellow:hover{
+        color: #FDC93B;
+        background: #fff;
+    }
+
+/* Profiles */
+#experts{
+    padding: 8vw 8vw 0 8vw;
+    text-align: center;
+}
+
+#experts .expert-box{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#experts .expert-box .profiles{
+    background-color:  #f9f9ff;
+    padding: 10px 30px;
+    margin: 40px ;
+}
+#experts .expert-box .profiles .image_container{
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        overflow: hidden;
+        margin-bottom: 20px;
+        margin-top: 0;
+}
+#experts .expert-box .profiles .image_container img{
+        width: 230px;
+        height: 230px;
+}
+#experts .expert-box .profiles .pro-links{
+    margin-top: 10px;
+}
+#experts .expert-box .profiles .pro-links i{
+    padding: 5px 8px;   /*modified here*/
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s ease;
+    font-size: 30px;
+    margin-right: 2px;
+    
+}
+#experts .expert-box .profiles .pro-links i:hover{
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+}
+
+/* footer */
+#whole_footer{
+    padding: 8vw;
+    background: #101C32;
+    margin-top: 100px;
+}
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: start;
+}
+#footer .footer-col{
+    padding-bottom: 40px;
+}
+#footer h3, #footer p{
+    color: rgb(241, 240, 245);
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+#footer .footer-col li{
+    list-style-type: none;
+    color: #7b738a;
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease
+}
+#footer .footer-col li:hover{
+    color: rgb(241, 240, 245);
+}
+#footer .footer-col .subscribe{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#footer .footer-col .subscribe input[type=email]{
+    width: 300px;
+    padding: 15px 15px;
+    background: #334f6c;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 50px;
+    margin-bottom: 20px;
+}
+#footer .footer-col .subscribe a.yellow{
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 15px 15px;
+    color: #2c2c2c;
+    background: #FDC93B;
+    transition: 0.3s ease;
+    display: block;
+    width: fit-content;
+}
+
+#footer .footer-col .subscribe a.yellow:hover{
+    background: #fff;
+    color: #FDC93B;
+}
+#whole_footer .copyright{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+#whole_footer .copyright p{
+    color: #fff;
+}
+#whole_footer .copyright .pro-links{
+    margin-top: 10px;
+}
+#whole_footer .copyright .pro-links i{
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 30px;
+    color: #7b738a;
+}
+#whole_footer .copyright .pro-links i:hover{
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+}
+/* Responsiveness */
+@media (max-width: 769px){
+    nav{
+        padding: 13px 15px;
+    }
+    h3#hub1 {
+        left: 97px;
+        top: 20px;
+      }
+      h3#hub2 {
+        left:100px;
+        top: 40px;
+      }
+    nav .navigation #menu_btn{
+        display:initial ;
+    }
+    nav .navigation #menu_close{
+        display: initial;
+        padding: 30px 0px 20px 20px;
+        color: #fff;
+    }
+    nav .navigation ul{
+        position: absolute;
+        top: 0;
+        right: -220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border: rgba(255, 255, 255, 0.18);
+        background-color: rgba(17, 20, 104, 0.45);
+        backdrop-filter: blur(4.5px);
+        height: 100vh;
+        width: 220px;
+        transition: 0.3s ease;
+    }
+    nav .navigation ul.active{
+        right: 0;
+    }
+    nav .navigation ul li{
+        padding: 20px 0  20px 40px;
+        margin-left: 0;
+    }
+    nav .navigation ul li a{
+        color: #fff;
+    }
+    #home{
+        padding-top: 0px;
+    }
+    #home p{
+        width: 90%;
+    }
+    #features{
+        padding: 8vw 4vw 0 4vw;
+    }
+    #course{
+        padding: 8vw 4vw 0 4vw;
+    }
+    #course .course-box .courses .cost{
+        right: 40px;
+    }
+    #registration{
+        padding: 6vw 4vw 6vw 4vw;
+        margin-top: 8vw;
+    }
+    #registration div.reminder div.time {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    #experts{
+        padding: 8vw 8vw 4vw 8vw;
+    }
+    footer .copyright .pro-links{
+        margin-top: 15px;
+    }
+}
+@media (max-width: 475px) {
+    #registration{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #registration div.reminder div.time {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home .btn{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}

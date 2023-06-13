@@ -1,0 +1,56 @@
+<!DOCTYPE >
+<html lang="en-us">
+  <head>
+    <title>The use of grid in css</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 20% 30% 40%;
+        background-color: #2196f3;
+        padding: 10px;
+        grid-column-gap: 5%;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        text-align: center;
+        font-size: 30px;
+      }
+      .grid-item:nth-child(n + 4) {
+        border-top: none;
+      }
+      :nth-child(1),
+      :nth-child(2),
+      :nth-child(4),
+      :nth-child(5),
+      :nth-child(7),
+      :nth-child(8) {
+        border-right: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grid Elements</h1>
+    <p>
+      A Grid Layouts must a parent element with the <em>display </em> property
+      set to <em>grid </em> or <em>inline-grid</em>
+    </p>
+    <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+      <div class="grid-item">7</div>
+      <div class="grid-item">8</div>
+      <div class="grid-item">9</div>
+    </div>
+  </body>
+</html>

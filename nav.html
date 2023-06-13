@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Legacy Properties Limited</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="nav.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- Home icon -->
+        <li class="mini">
+          <a><i class="fa fa-home"></i> LEGACY </a>
+        </li>
+
+        <br />
+        <!-- First list -->
+        <li>
+          <label for="checkbox-home" onclick="toggleLabel1()">Home </label>
+
+          <ul id="menu1" class="menu" style="display: none">
+            <li><a href="#">Home V2 with Contact</a></li>
+            <li><a href="#">Home V3 & Video Header</a></li>
+            <li><a href="#">Home V4 & Sticky Search</a></li>
+            <li><a href="#">Home V5 & Header Type 5</a></li>
+            <li><a href="#">Home with Map in Header</a></li>
+            <li><a href="#">Home & Theme Slider V1</a></li>
+          </ul>
+        </li>
+        <!-- Second list -->
+        <li>
+          <label for="checkbox-list" onclick="toggleLabel2()">Listings </label>
+
+          <ul id="menu2" class="menu" style="display: none">
+            <li><a href="#">List Layout</a></li>
+            <li><a href="#">Grid Layout</a></li>
+            <li><a href="#">With Map Property</a></li>
+          </ul>
+        </li>
+        <!-- Third list -->
+        <li>
+          <label for="checkbox-prop" onclick="toggleLabel3()">Property </label>
+
+          <ul id="menu3" class="menu" style="display: none">
+            <li><a href="#">Single Property</a></li>
+            <li><a href="#">Landed Property</a></li>
+          </ul>
+        </li>
+
+        <!-- Forth list -->
+        <li>
+          <label for="checkbox-page" onclick="toggleLabel4()">Pages </label>
+          <ul id="menu4" class="menu" style="display: none">
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Error Page</a></li>
+          </ul>
+        </li>
+
+        <!-- Fifth list -->
+        <li>
+          <label for="checkbox-agent" onclick="toggleLabel5()"
+            >Agencies & Agents
+          </label>
+
+          <ul id="menu5" class="menu" style="display: none">
+            <li><a href="#">Agency 1</a></li>
+            <li><a href="#">Agency 2</a></li>
+            <li><a href="#">Agency 3</a></li>
+            <li><a href="#">Agency 4</a></li>
+          </ul>
+        </li>
+
+        <!-- sixth list -->
+        <li>
+          <label for="checkbox-search" onclick="toggleLabel6()">Search </label>
+          <ul id="menu6" class="menu" style="display: none">
+            <li>
+              <a
+                ><input type="search" />
+                <i id="search_site" class="fa fa-search"></i
+              ></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div style="margin-left: 350px" class="anjasha">
+      <video width="320" height="190" controls>
+        <source src="anjasha.mp4" type="video/mp4" />
+      </video>
+      <a href="anjasha.mp4" download="anjasha kabara"
+        >Download your stuff here</a
+      >
+    </div>
+    <!-- Javascript codes  -->
+    <script>
+      var ul_label1 = document.getElementById("menu1");
+      var ul_label2 = document.getElementById("menu2");
+      var ul_label3 = document.getElementById("menu3");
+      var ul_label4 = document.getElementById("menu4");
+      var ul_label5 = document.getElementById("menu5");
+      var ul_label6 = document.getElementById("menu6");
+      function toggleLabel1() {
+        if (ul_label1.style.display == "none") {
+          ul_label1.style.display = "block";
+        } else {
+          ul_label1.style.display = "none";
+        }
+      }
+      function toggleLabel2() {
+        if (ul_label2.style.display == "none") {
+          ul_label2.style.display = "block";
+        } else {
+          ul_label2.style.display = "none";
+        }
+      }
+      function toggleLabel3() {
+        if (ul_label3.style.display == "none") {
+          ul_label3.style.display = "block";
+        } else {
+          ul_label3.style.display = "none";
+        }
+      }
+      function toggleLabel4() {
+        if (ul_label4.style.display == "none") {
+          ul_label4.style.display = "block";
+        } else {
+          ul_label4.style.display = "none";
+        }
+      }
+      function toggleLabel5() {
+        if (ul_label5.style.display == "none") {
+          ul_label5.style.display = "block";
+        } else {
+          ul_label5.style.display = "none";
+        }
+      }
+      function toggleLabel6() {
+        if (ul_label6.style.display == "none") {
+          ul_label6.style.display = "block";
+        } else {
+          ul_label6.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

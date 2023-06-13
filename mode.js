@@ -9,15 +9,15 @@ function toggletheme() {
       "#222"
     ); /* dark mode background-color */
     root.style.setProperty("--text-color", "#fff"); /* dark mode text-color */
-    mode1.style.setProperty("display", "none");
-    mode2.style.setProperty("display", "block");
+    mode1.style.display = "none";
+    mode2.style.display = "block";
   } else {
     root.style.setProperty(
       "--bg-color",
       "#f5f5f5"
     ); /* light mode background-color */
     root.style.setProperty("--text-color", "#333"); /* light mode text-color */
-    mode1.style.setProperty("display", "block");
-    mode2.style.setProperty("display", "none");
+    mode1.style.display = "block";
+    mode2.style.display = "light";
   }
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pounds to Kilograms Weight Converter</title>
+    <style type="text/css">
+      p#results input[type="number"] {
+        width: fit-content;
+        box-sizing: border-box;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Weight Converter</h2>
+    <p>Type a value in the Pounds field to convert the value to Kilograms:</p>
+
+    <p>
+      <label>Pounds</label>
+      <input
+        id="inputPounds"
+        type="number"
+        placeholder="Pounds"
+        onclick="converter()"
+        oninput="result.value=value/2.2046"
+      />
+    </p>
+    <p id="results">
+      <label for="kilogram">Kilograms</label>
+      <input type="number" id="result" placeholder="0" readonly />
+    </p>
+  </body>
+
+  <!-- Mirrored from www.w3schools.com/howto/tryit.asp?filename=tryhow_js_weight_converter_pounds_to_kilograms by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jan 2020 02:39:21 GMT -->
+</html>
