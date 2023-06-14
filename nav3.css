@@ -65,4 +65,9 @@ nav ul li ul.menu a:hover{
     background-color: var(--dark-blue);
     color: var(--color-text);
 }
-
+.menu {
+    display: none;
+}
+.menu.show {
+    display: block;
+}

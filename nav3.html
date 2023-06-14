@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Legacy Properties Limited</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="nav3.css" />
+    <script src="jquery-3.6.1.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <!-- Home icon -->
+        <li class="mini">
+          <a><i class="fa fa-home"></i> LEGACY </a>
+        </li>
+
+        <br />
+        <!-- First list -->
+        <li>
+          <label for="checkbox-home" class="click">Home </label>
+
+          <ul class="menu">
+            <li><a href="#">Home V2 with Contact</a></li>
+            <li><a href="#">Home V3 & Video Header</a></li>
+            <li><a href="#">Home V4 & Sticky Search</a></li>
+            <li><a href="#">Home V5 & Header Type 5</a></li>
+            <li><a href="#">Home with Map in Header</a></li>
+            <li><a href="#">Home & Theme Slider V1</a></li>
+          </ul>
+        </li>
+        <!-- Second list -->
+        <li>
+          <label for="checkbox-list" class="click">Listings </label>
+
+          <ul class="menu">
+            <li><a href="#">List Layout</a></li>
+            <li><a href="#">Grid Layout</a></li>
+            <li><a href="#">With Map Property</a></li>
+          </ul>
+        </li>
+        <!-- Third list -->
+        <li>
+          <label for="checkbox-prop" class="click">Property </label>
+
+          <ul id="menu3" class="menu">
+            <li><a href="#">Single Property</a></li>
+            <li><a href="#">Landed Property</a></li>
+          </ul>
+        </li>
+
+        <!-- Forth list -->
+        <li>
+          <label for="checkbox-page" class="click">Pages </label>
+          <ul class="menu">
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Error Page</a></li>
+          </ul>
+        </li>
+
+        <!-- Fifth list -->
+        <li>
+          <label for="checkbox-agent" class="click">Agencies & Agents </label>
+
+          <ul class="menu">
+            <li><a href="#">Agency 1</a></li>
+            <li><a href="#">Agency 2</a></li>
+            <li><a href="#">Agency 3</a></li>
+            <li><a href="#">Agency 4</a></li>
+          </ul>
+        </li>
+
+        <!-- sixth list -->
+        <li>
+          <label for="checkbox-search" class="click">Search </label>
+          <ul class="menu">
+            <li>
+              <a
+                ><input type="search" />
+                <i id="search_site" class="fa fa-search"></i
+              ></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Javascript codes  -->
+    <script>
+      $(".click").click(function () {
+        //alert($(this).text());
+        if ($(this).siblings(".menu").hasClass("show")) {
+          $(this).siblings(".menu").removeClass("show");
+        } else {
+          $(".menu").removeClass("show");
+          $(this).siblings(".menu").addClass("show");
+        }
+      });
+    </script>
+  </body>
+</html>
