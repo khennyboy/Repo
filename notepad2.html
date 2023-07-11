@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note pad using html, css and jquery</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="fontawesome-free-6.4.0-web/fontawesome/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="fontawesome-free-6.4.0-web/fontawesome/js/all.min.js"></script>
+    <style type="text/css">
+      body {
+        box-sizing: border-box;
+        background-color: lightblue;
+      }
+      #container {
+        width: 100%;
+        max-width: 500px;
+        background: #fff;
+        box-shadow: 2px 3px #4d4b4b;
+        margin-top: 30px;
+        height: fit-content;
+        margin: auto;
+        padding: 20px;
+      }
+      #container h3 {
+        text-align: center;
+        text-transform: uppercase;
+      }
+      #notepad {
+        resize: none;
+        outline: none;
+        align-content: center;
+        justify-content: center;
+        width: 80%;
+        overflow: auto;
+        display: flex;
+      }
+      #notepad:focus {
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #save {
+        display: block;
+        padding: 8px;
+        margin-top: 10px;
+        background: rgb(167, 167, 230);
+        font-weight: 600;
+        width: 20%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      #save:focus {
+        background: rgb(113, 113, 206);
+      }
+      #save:hover {
+        background: rgb(92, 92, 231);
+      }
+      #create {
+        display: none;
+      }
+      li {
+        list-style-type: none;
+        padding: 10px;
+      }
+      .content {
+        border: 1px solid rgb(121, 114, 114);
+        width: 90%;
+        height: 200px;
+        display: none;
+        padding: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .content.show {
+        display: block;
+      }
+      /* #notes span.open {
+        height: 200px;
+        overflow: auto;
+      } */
+      #notes {
+        display: none;
+      }
+      .del,
+      .edit,
+      .close {
+        background: none;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+        display: none;
+        margin-top: 5px;
+      }
+      .del {
+        color: red;
+      }
+      .edit {
+        color: blue;
+      }
+      .close {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h3>Welcome to sheriff_baba notepad website</h3>
+      <button id="view_note">VIEW NOTE</button>
+      <button id="add_note">ADD NOTE</button>
+      <div id="create">
+        <textarea
+          id="notepad"
+          cols="60"
+          rows="15"
+          placeholder="Note something down"
+          required
+        >
+        </textarea>
+        <input type="text" name="title" id="title" />
+        <button id="save">SAVE</button>
+        <button
+          id="
+        back"
+          onclick="back()"
+        >
+          BACK
+        </button>
+      </div>
+      <div id="notes"></div>
+    </div>
+  </body>
+  <script>
+    // check if local storage is supported
+    if (typeof Storage !== "undefined") {
+      // then extract saved data using the name (if any)
+      $("#notes").html(localStorage.getItem("notepad"));
+      //var list
+    } else {
+      // if local storage is not supported
+      alert("local storage not supported");
+    }
+    $("#save").click(function () {
+      localStorage.setItem("notepad", $("#notes").html());
+      var todo = $("#notepad").val();
+      var title = $("#title").val();
+      if (todo != "") {
+        var list = `<div id="parent"><label for="title" class="click">${title}</label><li class="content"><span>${todo}</span></li> </br><button class="del"><i class="fas fa-trash"></i></button> <button class="edit"><i class="fas fa-edit"></i></button><button class="close">CLOSE</button></div>`;
+        $("#notes").append(list);
+        // the name of our local storage is notepad
+        localStorage.setItem("notepad", $("#notes").html());
+        $("#notepad").val("");
+        $("#title").val("");
+      } else {
+        alert("The text-area should not be empty");
+      }
+      $(".del").click(function () {
+        $(this).parent("#parent").remove();
+        localStorage.setItem("notepad", $("#notes").html());
+      });
+    });
+    //save function ends here
+    $(".del").click(function () {
+      $(this).parent("#parent").remove();
+      $(".click").css("display", "block");
+      localStorage.setItem("notepad", $("#notes").html());
+    });
+    $(".click").click(function () {
+      //alert($(this).text());
+      $(this).siblings(".del").css("display", "block");
+      $(this).css("display", "none");
+      $(this).siblings(".edit").css("display", "block");
+      $(this).siblings(".close").css("display", "block");
+      $(this).siblings("li").css("display", "block");
+      $(".click").css("display", "none");
+      localStorage.setItem("notepad", $("#notes").html());
+    });
+    $(".close").click(function () {
+      $(this).siblings(".del").css("display", "none");
+      $(this).css("display", "none");
+      $(this).siblings(".edit").css("display", "none");
+      $(this).siblings(".click").css("display", "block");
+      $(this).siblings("li").css("display", "none");
+      $(".click").css("display", "block");
+      localStorage.setItem("notepad", $("#notes").html());
+    });
+    $(".edit").click(function () {
+      localStorage.setItem("notepad", $("#notes").html());
+      var content = $(this).siblings("li").text();
+      $("#notepad").val(content);
+      $(this).parent("#parent").remove();
+      $("#create").css("display", "block");
+      localStorage.setItem("notepad", $("#notes").html());
+    });
+    // homepage jquery codes
+    $("#add_note").click(function () {
+      $("#create").css("display", "block");
+      $("#add_note").css("display", "none");
+      $("#view_note").css("display", "none");
+      localStorage.setItem("notepad", $("#notes").html());
+    });
+    $("#view_note").click(function () {
+      $("#create").css("display", "none");
+      $("#add_note").css("display", "none");
+      $("#view_note").css("display", "none");
+      $("#notes").css("display", "block");
+      localStorage.setItem("notepad", $("#notes").html());
+    });
+    var view_note = document.querySelector("#view_note");
+    var back = document.querySelector("#back");
+    var add_note = document.querySelector("#add_note");
+    function back() {
+      if (
+        view_note.style.display == "none" &&
+        add_note.style.display == "none"
+      ) {
+        view_note.style.display = "block";
+        add_note.style.display = "block";
+      } else {
+        alert("whats wrong");
+      }
+    }
+  </script>
+</html>

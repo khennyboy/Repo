@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note pad using html, css and jquery</title>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="fontawesome-free-6.4.0-web/fontawesome/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="fontawesome-free-6.4.0-web/fontawesome/js/all.min.js"></script>
+    <style type="text/css">
+      body {
+        box-sizing: border-box;
+      }
+      #notepad {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <textarea
+        id="notepad"
+        cols="50"
+        rows="10"
+        placeholder="What do you have in mind..."
+        required
+      >
+      </textarea>
+      <input type="text" name="title" id="title" required />
+      <button id="save">SAVE</button>
+      <div id="create">
+        <div id="notes"></div>
+        <div id="name_of_note"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // check if local storage is supported
+    if (typeof Storage !== "undefined") {
+      // then extract saved data using the name (if any)
+      $("#notes").html(localStorage.getItem("notepad1"));
+      $("#name_of_note").html(localStorage.getItem("notepad2"));
+      //var list
+    } else {
+      // if local storage is not supported
+      alert("local storage not supported");
+    }
+    $("#save").click(function () {
+      var todo = $("#notepad").val();
+      var title = $("#title").val();
+      if (todo != "" && title != "") {
+        var list = `<li class="capital"><button>${title}</button> <button class="del"><i class="fas fa-trash"></i></button> <button class="edit"><i class="fas fa-edit"></i></button> <button class="done"><i class="fas fa-check-double"></i></button></li>`;
+        $("#name_of_note").append(list);
+        var list2 = `<div>${todo}</div>`;
+        $("#notes").append(list2);
+        localStorage.setItem("notepad1", $("#notes").html());
+        localStorage.setItem("notepad2", $("#name_of_note").html());
+        $("#title").val("");
+        $("#notepad").val("");
+      } else {
+        alert("The title of the text is compulsory");
+      }
+      {
+        // $("#notes").append(todo);
+        // update local storage by setting item name as "list" and value as the list content
+        // the name of our local storage is "notepad1 for text" & "notepad2 for title"
+        // localStorage.setItem("notepad1", $("#notes").html());
+        // $("#notepad").val("");
+      }
+      // if (title == "") {
+      //   alert("Enter a name in which you will like to save the text");
+      // } else {
+      //   var list = `<li class="capital"><button>${title}</button> <button class="del"><i class="fas fa-trash"></i></button> <button class="edit"><i class="fas fa-edit"></i></button> <button class="done"><i class="fas fa-check-double"></i></button></li>`;
+      //   $("#name_of_note").append(list);
+      //   localStorage.setItem("notepad2", $("#name_of_note").html());
+      //   $("#title").val("");
+      // }
+      $(".del").click(function () {
+        $(this).parent("li").remove();
+        localStorage.setItem("notepad2", $("#name_of_note").html());
+        localStorage.setItem("notepad1", $("#notes").html());
+      });
+      // $(".done").click(function () {
+      //   $(this).parent("li").addClass("marked");
+      //   $(this)
+      //     .parent("li")
+      //     .prepend(`<i class="fas fa-check" style="color:green"></i> `);
+      //   $(this).siblings(".edit").remove();
+      //   // $(this).remove();
+      //   localStorage.setItem("todolist", $("#todolist").html());
+      // });
+
+      // $(".edit").click(function () {
+      //   var content = $(this).siblings("span").text();
+      //   $("#input").val(content);
+      //   $(this).parent("li").remove();
+      //   localStorage.setItem("todolist", $("#todolist").html());
+      // });
+    });
+
+    // $(".del").click(function () {
+    //   $(this).parent("li").remove();
+    //   localStorage.setItem("todolist", $("#todolist").html());
+    // });
+  </script>
+</html>

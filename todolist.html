@@ -117,20 +117,14 @@
         <input type="text" id="input" />
         <button id="add">Add</button>
       </div>
-      <ol id="todolist">
-        <li class="capital">
-          <span>visit a friend</span
-          ><button class="del"><i class="fas fa-trash"></i></button>
-          <button class="done"><i class="fas fa-check"></i></button>
-        </li>
-      </ol>
+      <ol id="todolist"></ol>
     </div>
 
     <script>
       // check if local storage is supported
-      if (typeof Storage !== "undefined") {
+      if (typeof Storage != "undefined") {
         // then extract saved data using the name (if any)
-        $("#todolist").html(localStorage.getItem("list"));
+        $("#todolist").html(localStorage.getItem("todo_list"));
         //var list
       } else {
         // if local storage is not supported
@@ -141,41 +135,32 @@
         if (todo == "") {
           alert("Empty List");
         } else {
-          var list = `<li class="capital"><span>${todo}</span> <button class="del"><i class="fas fa-trash"></i></button> <button class="edit"><i class="fas fa-edit"></i></button> <button class="done"><i class="fas fa-check-double"></i></button></li>`;
+          var list = `<li ><span>${todo}</span> <button class="del"><i class="fas fa-trash"></i></button> <button class="edit"><i class="fas fa-edit"></i></button> <button class="done"><i class="fas fa-check-double"></i></button></li>`;
           $("#todolist").append(list);
           // update local storage by setting item name as "list" and value as the list content
-          localStorage.setItem("list", $("#todolist").html());
+          localStorage.setItem("todo_list", $("#todolist").html());
           $("#input").val("");
         }
         $(".del").click(function () {
-          //alert("hello");
           $(this).parent("li").remove();
-          localStorage.setItem("list", $("#todolist").html());
+          localStorage.setItem("todo_list", $("#todolist").html());
         });
         $(".done").click(function () {
-          //alert("hello");
           $(this).parent("li").addClass("marked");
           $(this)
             .parent("li")
             .prepend(`<i class="fas fa-check" style="color:green"></i> `);
           $(this).siblings(".edit").remove();
-          $(this).remove();
-          localStorage.setItem("list", $("#todolist").html());
+          // $(this).remove();
+          localStorage.setItem("todo_list", $("#todolist").html());
         });
 
         $(".edit").click(function () {
-          //alert("hello");
           var content = $(this).siblings("span").text();
           $("#input").val(content);
           $(this).parent("li").remove();
-          localStorage.setItem("list", $("#todolist").html());
+          localStorage.setItem("todo_list", $("#todolist").html());
         });
-      });
-
-      $(".del").click(function () {
-        //alert("hello");
-        $(this).parent("li").remove();
-        localStorage.setItem("list", $("#todolist").html());
       });
     </script>
   </body>

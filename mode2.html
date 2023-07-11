@@ -21,13 +21,13 @@
         height: 100vh;
         position: relative;
         background-color: rgb(248, 231, 76);
+        justify-content: center;
       }
       .container {
         position: absolute;
         top: 50%;
         left: 50%;
         height: 50px;
-        transform: translate(-50%, -50%); /* i haven't understand*/
         display: flex;
         align-items: center;
         justify-content: center;
@@ -38,7 +38,7 @@
         left: 0;
         width: 90px;
         height: 50px;
-        background: #444;
+        background: #b1a5a5;
         border-radius: 30px;
       }
       .container .toggle .toggle-button {
@@ -50,12 +50,12 @@
         background: white;
         border-radius: 50%;
         cursor: pointer;
+        background: red;
       }
-      .container .toggle.active {
-        background: cornflowerblue;
-      }
-      .container .toggle.active .toggle-button {
-        left: 45px;
+
+      .container .toggle .toggle-button.active {
+        transform: translate(40px);
+        background: green;
       }
 
       .container .text {
@@ -79,8 +79,8 @@
     var text = document.querySelector(".text");
     var button = document.querySelector(".toggle-button");
     function Animatedtoggle() {
-      toggle.classList.toggle("active");
-      if (toggle.classList.contains("active")) {
+      button.classList.toggle("active");
+      if (button.classList.contains("active")) {
         text.innerHTML = "ON";
         button.style.transition = "0.5s";
       } else {

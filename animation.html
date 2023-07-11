@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>The Use of Counters in css</title>
+    <style type="text/css">
+      ol {
+        counter-reset: section;
+        list-style-type: none;
+      }
+
+      li::before {
+        counter-increment: section;
+        content: counters(section, ".") " ";
+      }
+      div {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        background: yellow;
+        width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        -webkit-animation: sheriff_baba 10s infinite; /* Safari 4.0 - 8.0 */
+        animation: sheriff_baba 10s infinite;
+      }
+
+      /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes sheriff_baba {
+        0% {
+          width: 100px;
+        }
+        25% {
+          width: 25%;
+          background: red;
+        }
+        50% {
+          width: 50%;
+          background: green;
+        }
+        75% {
+          width: 75%;
+          background: blue;
+        }
+        100% {
+          width: 100%;
+          background: orange;
+        }
+      }
+
+      /* Standard syntax */
+      @keyframes sheriff_baba {
+        0% {
+          width: 100px;
+        }
+        25% {
+          width: 25%;
+          background: red;
+        }
+        50% {
+          width: 50%;
+          background: green;
+        }
+        75% {
+          width: 75%;
+          background: blue;
+        }
+        100% {
+          width: 100%;
+          background: orange;
+        }
+      }
+      /* Safari 4.0 - 8.0 */
+      #animation {
+        -webkit-animation-timing-function: linear;
+      }
+      /* Standard syntax */
+      #animation {
+        animation-timing-function: linear;
+      }
+    </style>
+  </head>
+  <body>
+    <ol>
+      <li>item</li>
+      <li>
+        item
+        <ol>
+          <li>item</li>
+          <li>item</li>
+          <li>
+            item
+            <ol>
+              <li>item</li>
+              <li>item</li>
+              <li>item</li>
+            </ol>
+          </li>
+          <li>item</li>
+        </ol>
+      </li>
+      <li>item</li>
+      <li>item</li>
+    </ol>
+
+    <ol>
+      <li>item</li>
+      <li>item</li>
+    </ol>
+
+    <p>
+      <b>Note:</b> IE8 supports these properties only if a !DOCTYPE is
+      specified.
+    </p>
+
+    <div id="animation"></div>
+  </body>
+
+  <!-- Mirrored from www.w3schools.com/css/tryit.asp?filename=trycss_counters3 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jan 2020 02:26:58 GMT -->
+</html>
